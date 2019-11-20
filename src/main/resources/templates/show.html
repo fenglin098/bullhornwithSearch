@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Leave a Message!</title>
+    <meta charset="UTF-8">
+    <title>Detail</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>Message Form</h1>
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
-    <input type="hidden" th:field="*{id}" />
-    Title:<input type="text" th:field="*{title}" />
-    <span th:if="${#fields.hasErrors('title')}"
-          th:errors="*{title}"></span><br/>
-    Content:<textarea row="3" th:field="*{content}" />
-    <span th:if="${#fields.hasErrors('content')}"
-          th:errors="*{content}"></span><br/>
-    Posted Date:<input type="date" th:field="*{postedDate}" />
-    <span th:if="${#fields.hasErrors('postedDate')}"
-          th:errors="*{postedDate}"></span><br/>
-    Posted By:<input type="text" th:field="*{postedBy}" />
-    <span th:if="${#fields.hasErrors('postedBy')}"
-          th:errors="*{postedBy}"></span><br/>
-    <br/>
-    <input type="submit" value="Submit" />
+<a href="/">Show All Messages</a><br/>
+Title :<span th:text="${message.title}"></span><br/>
+Content: <span th:text="${message.content}"></span><br/>
+Posted Date: <span th:text="${message.postedDate}"></span><br/>
+Posted By: <span th:text="${message.postedBy}"></span><br/>
 
-</form>
+<a th:href="@{/delete/{id}(id=${message.id})}">Delete this message</a>
+</body>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
