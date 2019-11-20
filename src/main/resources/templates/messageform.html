@@ -8,8 +8,9 @@
 </head>
 <body>
 <h1>Message Form</h1>
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+<form action="/process" th:object="${message}" method="post" enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
+    <input type="hidden" th:field="*{pic}" />
     Title:<input type="text" th:field="*{title}" />
     <span th:if="${#fields.hasErrors('title')}"
           th:errors="*{title}"></span><br/>
@@ -22,9 +23,9 @@
     Posted By:<input type="text" th:field="*{postedBy}" />
     <span th:if="${#fields.hasErrors('postedBy')}"
           th:errors="*{postedBy}"></span><br/>
+    <input type="file" name="file" />
     <br/>
     <input type="submit" value="Submit" />
-
 </form>
 
 
