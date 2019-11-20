@@ -5,8 +5,10 @@
     <title>Leave a Message!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
+<div th:replace="base :: navlinks"></div>
 <h1>Message Form</h1>
 <form action="/process" th:object="${message}" method="post" enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />

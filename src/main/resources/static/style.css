@@ -1,0 +1,7 @@
+body {
+    background: url(https://res.cloudinary.com/dw2hl1oiq/image/upload/v1570917714/background_h5prjy.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
