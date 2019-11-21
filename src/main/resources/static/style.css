@@ -5,3 +5,9 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+.jumbotron {
+    background: url(https://nyc3.digitaloceanspaces.com/aph/app/uploads/2019/02/26161133/iStock-904084674.jpg) fixed center no-repeat;
+    background-size: cover;
+    margin: 70px;
+}
